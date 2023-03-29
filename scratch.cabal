@@ -43,7 +43,6 @@ common common-options
 
 executable scratch-exe
   import:         common-options
-  type:           exitcode-stdio-1.0
   hs-source-dirs: src
   main-is:        Main.hs
   ghc-options:    -threaded -rtsopts -with-rtsopts=-N

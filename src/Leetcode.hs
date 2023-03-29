@@ -874,3 +874,15 @@ instance Foldable Levelorder where
           helper [] = ini
           helper (Empty' : xs) = helper xs
           helper ((Node' left center right) : xs) = f center (helper (xs ++ [left, right]))
+
+
+{-
+data BinaryTree' a = Empty' | Node' (BinaryTree' a) a (BinaryTree' a)
+    deriving (Show, Eq)
+-}
+
+-- write depth first search for a binary tree without using foldr
+depthFirstSearch :: BinaryTree' a -> [a]
+depthFirstSearch = undefined
+
+-- write breadth first search for a binary tree

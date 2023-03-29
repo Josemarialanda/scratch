@@ -587,3 +587,15 @@ appear on the left-hand side. Existential types are a way of turning this off.
 -- instantiated at the “definition site” (where the function is defined).
 -- In other words, the function’s definition is free to choose how to instantiate
 -- the type variable; but the user of the function is not.
+
+
+
+
+-- Sieve of Eratosthenes
+-- the sieve of eratosthenes is a way to find all the prime numbers up to a given number
+-- it works by starting with a list of all the numbers from 2 to the given number
+-- then it removes all the numbers that are multiples of 2 from the list
+sieveOfEratosthenes :: Int -> [Int]
+sieveOfEratosthenes n = sieve [2..n]
+    where sieve [] = []
+          sieve (x:xs) = x : sieve [y | y <- xs, y `mod` x /= 0]
